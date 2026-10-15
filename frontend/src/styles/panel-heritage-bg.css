@@ -1,0 +1,419 @@
+/**
+ * 非遗主题面板背景设计 - 底部聚焦·竞赛级艺术优化版
+ * 为左侧会话面板和右侧信息面板设计的古风背景
+ * 包含 5 个主题：墨韵丹青、青花瓷韵、敦煌飞天、江南水乡、蜀锦华章
+ * 
+ * 设计理念：
+ * - 底部聚焦式设计，不遮挡顶部导航
+ * - 多层叠加，营造丰富的视觉层次
+ * - 底层设计，绝不遮挡面板内容
+ * - 精致的 SVG 图案，传承非遗文化
+ * - 渐变融合，自然过渡
+ */
+
+/* ============================================
+   通用面板背景类 - 三层架构（底部聚焦）
+   ============================================ */
+
+.panel-heritage-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 第一层：底部背景图案（只在下半部分显示） */
+.panel-heritage-bg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 75%;
+  background-size: 160px 160px;
+  background-position: center bottom;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+}
+
+/* 第二层：底部渐变叠加（从下往上渐变） */
+.panel-heritage-bg::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70%;
+  background: linear-gradient(
+    to top,
+    var(--panel-gradient-bottom, transparent) 0%,
+    var(--panel-gradient-mid, transparent) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 第三层：内容层 */
+.panel-heritage-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   墨韵丹青主题 - 水墨氤氲，虚实相生
+   大师级设计：水墨晕染、远山叠影、书法笔触、朱红印章、宣纸纹理
+   ============================================ */
+
+/* 左侧会话面板 - 水墨意境（底部） */
+[data-theme='ink-wash'] .panel-heritage-bg.sidebar-left::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='inkBlur'%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3CradialGradient id='inkGrad1'%3E%3Cstop offset='0%' stop-color='%232c2c2c' stop-opacity='0.18'/%3E%3Cstop offset='100%' stop-color='%232c2c2c' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='inkGrad2'%3E%3Cstop offset='0%' stop-color='%232c2c2c' stop-opacity='0.14'/%3E%3Cstop offset='100%' stop-color='%232c2c2c' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='80' cy='140' r='45' fill='url(%23inkGrad1)' filter='url(%23inkBlur)'/%3E%3Ccircle cx='40' cy='125' r='30' fill='url(%23inkGrad2)' filter='url(%23inkBlur)'/%3E%3Ccircle cx='120' cy='135' r='35' fill='url(%23inkGrad1)' filter='url(%23inkBlur)'/%3E%3Cpath d='M5 155 Q30 125 55 155 Q80 165 105 155 Q135 145 155 130' fill='none' stroke='%238b4513' stroke-opacity='0.2' stroke-width='3'/%3E%3Cpath d='M15 145 Q35 120 55 145 Q75 160 95 145 Q120 135 145 125' fill='none' stroke='%238b4513' stroke-opacity='0.15' stroke-width='2.5'/%3E%3Cpath d='M25 138 Q45 118 65 138 Q85 148 105 138 Q125 128 135 120' fill='none' stroke='%238b4513' stroke-opacity='0.1' stroke-width='2'/%3E%3Ccircle cx='55' cy='115' r='10' fill='%23c41e3a' fill-opacity='0.25'/%3E%3Ccircle cx='105' cy='125' r='8' fill='%23c41e3a' fill-opacity='0.2'/%3E%3Ccircle cx='75' cy='135' r='6' fill='%23c41e3a' fill-opacity='0.15'/%3E%3C/svg%3E");
+  opacity: 0.65;
+}
+
+[data-theme='ink-wash'] .panel-heritage-bg.sidebar-left {
+  --panel-gradient-bottom: rgba(44, 44, 44, 0.07);
+  --panel-gradient-mid: rgba(139, 69, 19, 0.04);
+}
+
+/* 右侧信息面板 - 山水画卷（底部） */
+[data-theme='ink-wash'] .panel-heritage-bg.right-panel::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='inkBlur2'%3E%3CfeGaussianBlur stdDeviation='3.5'/%3E%3C/filter%3E%3CradialGradient id='inkGrad3'%3E%3Cstop offset='0%' stop-color='%232c2c2c' stop-opacity='0.16'/%3E%3Cstop offset='100%' stop-color='%232c2c2c' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='80' cy='140' r='50' fill='url(%23inkGrad3)' filter='url(%23inkBlur2)'/%3E%3Cpath d='M0 158 Q25 128 50 158 Q75 168 100 158 Q130 148 155 135' fill='none' stroke='%238b4513' stroke-opacity='0.22' stroke-width='3.5'/%3E%3Cpath d='M10 148 Q30 123 50 148 Q70 163 90 148 Q115 138 140 128' fill='none' stroke='%238b4513' stroke-opacity='0.16' stroke-width='3'/%3E%3Cpath d='M20 140 Q40 118 60 140 Q80 150 100 140 Q120 130 135 122' fill='none' stroke='%238b4513' stroke-opacity='0.12' stroke-width='2.5'/%3E%3Ccircle cx='45' cy='120' r='12' fill='%23c41e3a' fill-opacity='0.28'/%3E%3Ccircle cx='100' cy='130' r='9' fill='%23c41e3a' fill-opacity='0.22'/%3E%3Ccircle cx='70' cy='140' r='7' fill='%23c41e3a' fill-opacity='0.18'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+[data-theme='ink-wash'] .panel-heritage-bg.right-panel {
+  --panel-gradient-bottom: rgba(139, 69, 19, 0.06);
+  --panel-gradient-mid: rgba(44, 44, 44, 0.04);
+}
+
+/* ============================================
+   青花瓷韵主题 - 素胚勾勒，青花绽放
+   大师级设计：缠枝莲纹、海浪纹、青花边框、瓷白底纹、冰裂纹
+   ============================================ */
+
+/* 左侧会话面板 - 青花缠枝（底部） */
+[data-theme='blue-porcelain'] .panel-heritage-bg.sidebar-left::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M80 35 Q110 55 130 65 Q110 85 80 115 Q50 85 30 65 Q50 45 80 35' fill='none' stroke='%231e4d8c' stroke-opacity='0.2' stroke-width='3'/%3E%3Cpath d='M80 45 Q105 62 122 70 Q105 88 80 105 Q55 88 38 70 Q55 52 80 45' fill='none' stroke='%234a90c2' stroke-opacity='0.15' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='130' r='28' fill='none' stroke='%231e4d8c' stroke-opacity='0.15' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='130' r='38' fill='none' stroke='%234a90c2' stroke-opacity='0.08' stroke-width='1.5' stroke-dasharray='4 2'/%3E%3Cpath d='M0 150 Q40 140 80 150 Q120 160 160 150' fill='none' stroke='%234a90c2' stroke-opacity='0.12' stroke-width='2.5'/%3E%3Cpath d='M0 160 Q40 150 80 160 Q120 170 160 160' fill='none' stroke='%234a90c2' stroke-opacity='0.08' stroke-width='2'/%3E%3C/svg%3E");
+  opacity: 0.65;
+}
+
+[data-theme='blue-porcelain'] .panel-heritage-bg.sidebar-left {
+  --panel-gradient-bottom: rgba(30, 77, 140, 0.07);
+  --panel-gradient-mid: rgba(74, 144, 194, 0.05);
+}
+
+/* 右侧信息面板 - 海浪纹样（底部） */
+[data-theme='blue-porcelain'] .panel-heritage-bg.right-panel::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M80 45 Q115 65 125 100 Q115 135 80 155 Q45 135 35 100 Q45 65 80 45' fill='none' stroke='%231e4d8c' stroke-opacity='0.18' stroke-width='3'/%3E%3Cpath d='M80 55 Q108 75 118 100 Q108 125 80 145 Q52 125 42 100 Q52 75 80 55' fill='none' stroke='%234a90c2' stroke-opacity='0.14' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='125' r='35' fill='none' stroke='%231e4d8c' stroke-opacity='0.12' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='125' r='45' fill='none' stroke='%234a90c2' stroke-opacity='0.07' stroke-width='1.5' stroke-dasharray='5 2'/%3E%3Cpath d='M15 15 L145 145 M145 15 L15 145' stroke='%231e4d8c' stroke-opacity='0.06' stroke-width='0.8'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+[data-theme='blue-porcelain'] .panel-heritage-bg.right-panel {
+  --panel-gradient-bottom: rgba(74, 144, 194, 0.06);
+  --panel-gradient-mid: rgba(30, 77, 140, 0.04);
+}
+
+/* ============================================
+   敦煌飞天主题 - 丝路明珠，飞天曼舞
+   大师级设计：飞天藻井、莲花宝相、火焰纹、彩带飘拂、七宝琉璃
+   ============================================ */
+
+/* 左侧会话面板 - 藻井华盖（底部） */
+[data-theme='dunhuang'] .panel-heritage-bg.sidebar-left::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='dunhuangGold'%3E%3Cstop offset='0%' stop-color='%23FFD700' stop-opacity='0.25'/%3E%3Cstop offset='100%' stop-color='%23FFD700' stop-opacity='0.05'/%3E%3C/radialGradient%3E%3CradialGradient id='dunhuangRed'%3E%3Cstop offset='0%' stop-color='%23c54b3c' stop-opacity='0.3'/%3E%3Cstop offset='100%' stop-color='%23c54b3c' stop-opacity='0.1'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='80' cy='130' r='55' fill='none' stroke='%23FFD700' stroke-opacity='0.18' stroke-width='1.5'/%3E%3Ccircle cx='80' cy='130' r='45' fill='url(%23dunhuangGold)'/%3E%3Cpath d='M80 50 Q110 70 130 90 Q140 110 130 130 Q110 150 80 160 Q50 150 30 130 Q20 110 30 90 Q50 70 80 50' fill='none' stroke='%23FFD700' stroke-opacity='0.28' stroke-width='3'/%3E%3Cpath d='M80 60 Q105 78 122 95 Q132 112 122 128 Q105 145 80 152 Q55 145 38 128 Q28 112 38 95 Q55 78 80 60' fill='none' stroke='%23b8860b' stroke-opacity='0.22' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='130' r='32' fill='url(%23dunhuangRed)'/%3E%3Ccircle cx='80' cy='130' r='22' fill='none' stroke='%23c54b3c' stroke-opacity='0.2' stroke-width='2.5'/%3E%3Cpath d='M50 100 Q65 90 80 100 Q95 110 110 100' fill='none' stroke='%232e8b57' stroke-opacity='0.2' stroke-width='2.5'/%3E%3Cpath d='M45 112 Q60 102 75 112 Q90 122 105 112' fill='none' stroke='%232e8b57' stroke-opacity='0.14' stroke-width='2'/%3E%3Cpath d='M40 122 Q55 112 70 122 Q85 132 100 122' fill='none' stroke='%232e8b57' stroke-opacity='0.1' stroke-width='1.5'/%3E%3C/svg%3E");
+  opacity: 0.72;
+}
+
+[data-theme='dunhuang'] .panel-heritage-bg.sidebar-left {
+  --panel-gradient-bottom: rgba(255, 215, 0, 0.09);
+  --panel-gradient-mid: rgba(197, 75, 60, 0.06);
+}
+
+/* 右侧信息面板 - 飞天曼舞（底部） */
+[data-theme='dunhuang'] .panel-heritage-bg.right-panel::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='dunhuangGold2'%3E%3Cstop offset='0%' stop-color='%23FFD700' stop-opacity='0.22'/%3E%3Cstop offset='100%' stop-color='%23FFD700' stop-opacity='0.06'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='80' cy='125' r='52' fill='none' stroke='%23FFD700' stroke-opacity='0.16' stroke-width='1.5'/%3E%3Ccircle cx='80' cy='125' r='42' fill='url(%23dunhuangGold2)'/%3E%3Cpath d='M80 52 Q112 72 125 95 Q135 115 125 135 Q112 155 80 165 Q48 155 35 135 Q25 115 35 95 Q48 72 80 52' fill='none' stroke='%23FFD700' stroke-opacity='0.26' stroke-width='3'/%3E%3Cpath d='M80 62 Q107 80 118 100 Q128 118 118 132 Q107 150 80 158 Q53 150 42 132 Q32 118 42 100 Q53 80 80 62' fill='none' stroke='%23b8860b' stroke-opacity='0.2' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='125' r='30' fill='none' stroke='%23c54b3c' stroke-opacity='0.18' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='125' r='20' fill='none' stroke='%23c54b3c' stroke-opacity='0.12' stroke-width='2'/%3E%3Cpath d='M55 95 Q70 85 85 95 Q100 105 105 85' fill='none' stroke='%232e8b57' stroke-opacity='0.18' stroke-width='2.5'/%3E%3Cpath d='M50 108 Q65 98 80 108 Q95 118 100 98' fill='none' stroke='%232e8b57' stroke-opacity='0.12' stroke-width='2'/%3E%3C/svg%3E");
+  opacity: 0.68;
+}
+
+[data-theme='dunhuang'] .panel-heritage-bg.right-panel {
+  --panel-gradient-bottom: rgba(255, 215, 0, 0.07);
+  --panel-gradient-mid: rgba(197, 75, 60, 0.05);
+}
+
+/* ============================================
+   江南水乡主题 - 小桥流水，烟雨江南
+   设计元素：水波纹、窗格纹、柳叶纹、园林意境、春雨
+   ============================================ */
+
+/* 左侧会话面板 - 水波荡漾（底部） */
+[data-theme='jiangnan'] .panel-heritage-bg.sidebar-left::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 110 Q40 100 80 110 Q120 120 160 110' fill='none' stroke='%235D8C5D' stroke-opacity='0.18' stroke-width='2.5'/%3E%3Cpath d='M0 125 Q40 115 80 125 Q120 135 160 125' fill='none' stroke='%235D8C5D' stroke-opacity='0.14' stroke-width='2'/%3E%3Cpath d='M0 140 Q40 130 80 140 Q120 150 160 140' fill='none' stroke='%237CB37C' stroke-opacity='0.12' stroke-width='2'/%3E%3Cpath d='M0 152 Q40 142 80 152 Q120 162 160 152' fill='none' stroke='%237CB37C' stroke-opacity='0.08' stroke-width='1.5'/%3E%3Crect x='50' y='100' width='60' height='60' fill='none' stroke='%23A0825A' stroke-opacity='0.16' stroke-width='2'/%3E%3Cpath d='M50 110 L110 110 M50 125 L110 125 M50 140 L110 140 M50 155 L110 155' stroke='%23A0825A' stroke-opacity='0.08' stroke-width='1'/%3E%3C/svg%3E");
+  opacity: 0.65;
+}
+
+[data-theme='jiangnan'] .panel-heritage-bg.sidebar-left {
+  --panel-gradient-bottom: rgba(93, 140, 93, 0.07);
+  --panel-gradient-mid: rgba(124, 179, 124, 0.05);
+}
+
+/* 右侧信息面板 - 园林窗格（底部） */
+[data-theme='jiangnan'] .panel-heritage-bg.right-panel::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 100 Q50 90 80 100 Q110 110 145 100' fill='none' stroke='%235D8C5D' stroke-opacity='0.16' stroke-width='2.5'/%3E%3Cpath d='M15 120 Q50 110 80 120 Q110 130 145 120' fill='none' stroke='%237CB37C' stroke-opacity='0.13' stroke-width='2'/%3E%3Cpath d='M15 140 Q50 130 80 140 Q110 150 145 140' fill='none' stroke='%237CB37C' stroke-opacity='0.09' stroke-width='1.5'/%3E%3Crect x='35' y='85' width='45' height='75' fill='none' stroke='%23A0825A' stroke-opacity='0.18' stroke-width='2'/%3E%3Crect x='80' y='85' width='45' height='75' fill='none' stroke='%23A0825A' stroke-opacity='0.18' stroke-width='2'/%3E%3Cpath d='M35 100 L80 100 M35 120 L80 120 M35 140 L80 140 M80 100 L125 100 M80 120 L125 120 M80 140 L125 140' stroke='%23A0825A' stroke-opacity='0.1' stroke-width='1'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+[data-theme='jiangnan'] .panel-heritage-bg.right-panel {
+  --panel-gradient-bottom: rgba(124, 179, 124, 0.06);
+  --panel-gradient-mid: rgba(93, 140, 93, 0.04);
+}
+
+/* ============================================
+   蜀锦华章主题 - 锦绣华章，富贵吉祥
+   大师级设计：回纹、方胜纹、织锦几何纹、华贵色彩、金丝线
+   ============================================ */
+
+/* 左侧会话面板 - 织锦回纹（底部） */
+[data-theme='brocade'] .panel-heritage-bg.sidebar-left::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='90' width='70' height='70' fill='%23c41e3a' fill-opacity='0.06'/%3E%3Crect x='90' y='140' width='70' height='20' fill='%23c41e3a' fill-opacity='0.06'/%3E%3Cpath d='M0 90 L160 160 M160 90 L0 160' stroke='%23c41e3a' stroke-opacity='0.12' stroke-width='2'/%3E%3Ccircle cx='80' cy='130' r='35' fill='none' stroke='%23f4a460' stroke-opacity='0.16' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='130' r='45' fill='none' stroke='%23f4a460' stroke-opacity='0.08' stroke-width='1.5' stroke-dasharray='5 2'/%3E%3Cpath d='M35 105 L125 105 L125 155 L35 155 Z' fill='none' stroke='%232e8b57' stroke-opacity='0.14' stroke-width='2'/%3E%3Cpath d='M45 115 L115 115 L115 145 L45 145 Z' fill='none' stroke='%23f4a460' stroke-opacity='0.1' stroke-width='1.5'/%3E%3C/svg%3E");
+  opacity: 0.65;
+}
+
+[data-theme='brocade'] .panel-heritage-bg.sidebar-left {
+  --panel-gradient-bottom: rgba(196, 30, 58, 0.06);
+  --panel-gradient-mid: rgba(244, 164, 96, 0.04);
+}
+
+/* 右侧信息面板 - 方胜吉祥（底部） */
+[data-theme='brocade'] .panel-heritage-bg.right-panel::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='25' y='95' width='55' height='65' fill='%23c41e3a' fill-opacity='0.055'/%3E%3Crect x='95' y='125' width='55' height='35' fill='%23c41e3a' fill-opacity='0.055'/%3E%3Cpath d='M0 130 L160 130 M80 75 L80 160' stroke='%23f4a460' stroke-opacity='0.13' stroke-width='2'/%3E%3Ccircle cx='80' cy='130' r='40' fill='none' stroke='%232e8b57' stroke-opacity='0.14' stroke-width='2.5'/%3E%3Ccircle cx='80' cy='130' r='50' fill='none' stroke='%23f4a460' stroke-opacity='0.08' stroke-width='1.5' stroke-dasharray='4 2'/%3E%3Cpath d='M45 110 L115 150 M115 110 L45 150' stroke='%23c41e3a' stroke-opacity='0.1' stroke-width='2'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+[data-theme='brocade'] .panel-heritage-bg.right-panel {
+  --panel-gradient-bottom: rgba(244, 164, 96, 0.06);
+  --panel-gradient-mid: rgba(46, 139, 87, 0.04);
+}
+
+/* ============================================
+   装饰性元素 - 底部角落花纹（精致版）
+   只在下半部分显示，更加精致美观
+   ============================================ */
+
+.panel-corner-ornament {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  opacity: 0.75;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* 底部角落装饰 */
+.panel-corner-ornament.bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+.panel-corner-ornament.bottom-right {
+  bottom: 12px;
+  right: 12px;
+  transform: scaleX(-1);
+}
+
+/* 墨韵丹青 - 角落装饰（朱红印章） */
+[data-theme='ink-wash'] .panel-corner-ornament {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='sealGrad'%3E%3Cstop offset='0%' stop-color='%23c41e3a' stop-opacity='0.35'/%3E%3Cstop offset='100%' stop-color='%23c41e3a' stop-opacity='0.15'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath d='M0 0 L80 0 L80 35 Q55 65 30 80 L0 80 Z' fill='%232c2c2c' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='55' r='14' fill='url(%23sealGrad)'/%3E%3Ccircle cx='55' cy='55' r='9' fill='%23c41e3a' fill-opacity='0.28'/%3E%3Ccircle cx='55' cy='55' r='5' fill='%23c41e3a' fill-opacity='0.2'/%3E%3C/svg%3E");
+}
+
+/* 青花瓷韵 - 角落装饰（青花缠枝） */
+[data-theme='blue-porcelain'] .panel-corner-ornament {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L80 0 L80 35 Q55 65 30 80 L0 80 Z' fill='none' stroke='%231e4d8c' stroke-opacity='0.25' stroke-width='3'/%3E%3Ccircle cx='55' cy='55' r='13' fill='%234a90c2' fill-opacity='0.32'/%3E%3Ccircle cx='55' cy='55' r='8' fill='none' stroke='%231e4d8c' stroke-opacity='0.22' stroke-width='2'/%3E%3Ccircle cx='55' cy='55' r='4' fill='%234a90c2' fill-opacity='0.25'/%3E%3C/svg%3E");
+}
+
+/* 敦煌飞天 - 角落装饰（莲花宝相） */
+[data-theme='dunhuang'] .panel-corner-ornament {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='cornerGold'%3E%3Cstop offset='0%' stop-color='%23FFD700' stop-opacity='0.4'/%3E%3Cstop offset='100%' stop-color='%23FFD700' stop-opacity='0.15'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='55' cy='55' r='30' fill='none' stroke='%23FFD700' stroke-opacity='0.32' stroke-width='2'/%3E%3Cpath d='M55 25 Q75 40 78 55 Q75 70 55 85 Q35 70 32 55 Q35 40 55 25' fill='none' stroke='%23FFD700' stroke-opacity='0.4' stroke-width='2.5'/%3E%3Ccircle cx='55' cy='55' r='20' fill='url(%23cornerGold)'/%3E%3Ccircle cx='55' cy='55' r='12' fill='none' stroke='%23b8860b' stroke-opacity='0.3' stroke-width='2'/%3E%3Ccircle cx='55' cy='55' r='6' fill='%23c54b3c' fill-opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* 江南水乡 - 角落装饰（园林窗格） */
+[data-theme='jiangnan'] .panel-corner-ornament {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='30' y='30' width='50' height='50' fill='none' stroke='%235D8C5D' stroke-opacity='0.3' stroke-width='2.5'/%3E%3Cpath d='M30 47 L80 47 M47 30 L47 80' stroke='%235D8C5D' stroke-opacity='0.18' stroke-width='2'/%3E%3Cpath d='M30 63 L80 63 M63 30 L63 80' stroke='%235D8C5D' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ccircle cx='55' cy='55' r='12' fill='%237CB37C' fill-opacity='0.35'/%3E%3C/svg%3E");
+}
+
+/* 蜀锦华章 - 角落装饰（织锦方胜） */
+[data-theme='brocade'] .panel-corner-ornament {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L80 0 L80 35 L58 35 L58 57 L35 57 L35 80 L0 80 Z' fill='%23c41e3a' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='55' r='14' fill='%23f4a460' fill-opacity='0.35'/%3E%3Ccircle cx='55' cy='55' r='9' fill='none' stroke='%23c41e3a' stroke-opacity='0.2' stroke-width='1.5'/%3E%3Ccircle cx='55' cy='55' r='5' fill='%23f4a460' fill-opacity='0.28'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   边框装饰纹样（精致版）
+   ============================================ */
+
+.panel-border-ornament {
+  position: relative;
+}
+
+.panel-border-ornament::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(var(--color-surface), var(--color-surface)), var(--panel-border-pattern);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* 墨韵丹青 - 边框（水墨圆点） */
+[data-theme='ink-wash'] .panel-border-ornament {
+  --panel-border-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%238b4513' stroke-opacity='0.28' stroke-width='2'/%3E%3Ccircle cx='30' cy='30' r='7' fill='none' stroke='%238b4513' stroke-opacity='0.18' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* 青花瓷韵 - 边框（青花花瓣） */
+[data-theme='blue-porcelain'] .panel-border-ornament {
+  --panel-border-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10 Q42 22 30 34 Q18 22 30 10' fill='none' stroke='%234a90c2' stroke-opacity='0.28' stroke-width='2'/%3E%3Cpath d='M30 26 Q39 35 30 44 Q21 35 30 26' fill='none' stroke='%234a90c2' stroke-opacity='0.18' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* 敦煌飞天 - 边框（藻井菱形） */
+[data-theme='dunhuang'] .panel-border-ornament {
+  --panel-border-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30 Z' fill='none' stroke='%23c54b3c' stroke-opacity='0.28' stroke-width='2'/%3E%3Cpath d='M30 18 L42 30 L30 42 L18 30 Z' fill='none' stroke='%23c54b3c' stroke-opacity='0.18' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* 江南水乡 - 边框（水波曲线） */
+[data-theme='jiangnan'] .panel-border-ornament {
+  --panel-border-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 30 Q22 20 30 30 Q38 40 50 30' fill='none' stroke='%236b8e7b' stroke-opacity='0.28' stroke-width='2'/%3E%3Cpath d='M10 38 Q22 28 30 38 Q38 48 50 38' fill='none' stroke='%236b8e7b' stroke-opacity='0.18' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* 蜀锦华章 - 边框（回纹方格） */
+[data-theme='brocade'] .panel-border-ornament {
+  --panel-border-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='15' y='15' width='30' height='30' fill='none' stroke='%23f4a460' stroke-opacity='0.28' stroke-width='2'/%3E%3Crect x='22' y='22' width='16' height='16' fill='none' stroke='%23f4a460' stroke-opacity='0.18' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   分隔线装饰（精致版）
+   ============================================ */
+
+.panel-divider-ornament {
+  position: relative;
+  height: 1px;
+  background: var(--color-border);
+  margin: 16px 0;
+}
+
+.panel-divider-ornament::before,
+.panel-divider-ornament::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.4;
+}
+
+.panel-divider-ornament::before {
+  left: 0;
+}
+
+.panel-divider-ornament::after {
+  right: 0;
+}
+
+/* ============================================
+   滚动条美化（与主题适配）
+   ============================================ */
+
+.panel-heritage-bg::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel-heritage-bg::-webkit-scrollbar-track {
+  background: var(--color-background-secondary);
+  border-radius: 3px;
+}
+
+.panel-heritage-bg::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+  opacity: 0.4;
+}
+
+.panel-heritage-bg::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+  opacity: 0.6;
+}
+
+/* ============================================
+   响应式适配
+   ============================================ */
+
+@media (max-width: 768px) {
+  .panel-heritage-bg::before {
+    opacity: 0.35;
+    height: 65%;
+    background-size: 100px 100px;
+  }
+
+  .panel-heritage-bg::after {
+    height: 60%;
+  }
+
+  .panel-corner-ornament {
+    width: 50px;
+    height: 50px;
+    opacity: 0.55;
+  }
+
+  .panel-border-ornament::before {
+    opacity: 0.3;
+  }
+}
+
+/* ============================================
+   性能优化 - 减少动画
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-heritage-bg::before,
+  .panel-heritage-bg::after,
+  .panel-corner-ornament {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ============================================
+   暗色模式适配
+   ============================================ */
+
+[data-theme][data-mode='dark'] .panel-heritage-bg::before {
+  opacity: 0.4;
+}
+
+[data-theme][data-mode='dark'] .panel-corner-ornament {
+  opacity: 0.65;
+}
+
+[data-theme][data-mode='dark'] .panel-border-ornament::before {
+  opacity: 0.35;
+}
+
+/* ============================================
+   悬停效果增强
+   ============================================ */
+
+.panel-heritage-bg:hover::before {
+  opacity: 0.75;
+}
+
+.panel-heritage-bg:hover .panel-corner-ornament {
+  opacity: 0.85;
+}

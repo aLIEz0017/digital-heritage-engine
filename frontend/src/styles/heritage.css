@@ -1,0 +1,506 @@
+/* 古风非遗建筑背景样式 */
+
+/* Hero区域 - 非遗建筑背景 */
+.hero-heritage-bg {
+  position: relative;
+  background: linear-gradient(135deg, 
+    #2c1810 0%, 
+    #4a2c1a 20%, 
+    #6b4423 40%, 
+    #8b6f47 60%, 
+    #a0826d 80%, 
+    #4a3428 100%
+  );
+  overflow: hidden;
+}
+
+.hero-heritage-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L90 35 L85 38 L50 18 L15 38 L10 35 Z' fill='rgba(218,165,32,0.15)'/%3E%3Cpath d='M30 45 L70 45 L65 48 L35 48 Z' fill='rgba(139,69,19,0.2)'/%3E%3Crect x='25' y='52' width='50' height='30' fill='none' stroke='rgba(160,82,45,0.15)' stroke-width='1'/%3E%3Ccircle cx='50' cy='67' r='8' fill='none' stroke='rgba(218,165,32,0.1)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.4;
+  animation: patternFloat 20s ease-in-out infinite;
+}
+
+@keyframes patternFloat {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(5px); }
+}
+
+/* 古建筑轮廓剪影效果 */
+.building-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23000000' fill-opacity='0.15' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: bottom;
+  pointer-events: none;
+}
+
+/* 古风云纹装饰 */
+.cloud-pattern {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  opacity: 0.1;
+  animation: cloudFloat 15s ease-in-out infinite;
+}
+
+.cloud-pattern::before,
+.cloud-pattern::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(218,165,32,0.3) 0%, transparent 70%);
+}
+
+.cloud-pattern::before {
+  width: 120px;
+  height: 60px;
+  top: 20px;
+  left: 20px;
+}
+
+.cloud-pattern::after {
+  width: 80px;
+  height: 40px;
+  top: 40px;
+  left: 80px;
+}
+
+@keyframes cloudFloat {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  33% { transform: translateX(30px) translateY(-10px); }
+  66% { transform: translateX(-20px) translateY(5px); }
+}
+
+/* 金色粒子特效 */
+.golden-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #daa520 0%, transparent 70%);
+  border-radius: 50%;
+  animation: particleFloat 8s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(218,165,32,0.6);
+}
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translateY(-50px) translateX(20px) scale(1.2);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-100px) translateX(-10px) scale(0.8);
+    opacity: 0.8;
+  }
+  75% { 
+    transform: translateY(-50px) translateX(-30px) scale(1.1);
+    opacity: 0.4;
+  }
+}
+
+/* 页面主体 - 古风纯色背景 */
+.ancient-bg-solid {
+  background: linear-gradient(180deg, 
+    #faf9f6 0%, 
+    #f5f1eb 50%, 
+    #ede7dc 100%
+  );
+  position: relative;
+}
+
+/* 古建筑纹路纹理 */
+.ancient-texture {
+  position: relative;
+}
+
+.ancient-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 100px,
+      rgba(139, 69, 19, 0.03) 100px,
+      rgba(139, 69, 19, 0.03) 101px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 100px,
+      rgba(160, 82, 45, 0.02) 100px,
+      rgba(160, 82, 45, 0.02) 101px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 传统纹样边框装饰 */
+.traditional-border {
+  position: relative;
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.traditional-border::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  pointer-events: none;
+}
+
+/* 祥云纹样 */
+.xiangyun-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='60' viewBox='0 0 120 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,30 Q25,20 35,25 Q40,15 55,22 Q65,12 75,25 Q85,18 95,28 Q100,25 100,35 Q95,42 85,38 Q75,45 65,36 Q55,43 45,35 Q35,42 25,35 Q15,38 20,30' fill='none' stroke='rgba(218,165,32,0.15)' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 240px 120px;
+  background-repeat: repeat-x;
+  opacity: 0.6;
+}
+
+/* 回字纹 */
+.huiwen-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5' y='5' width='30' height='30' fill='none' stroke='rgba(139,69,19,0.1)' stroke-width='1'/%3E%3Crect x='10' y='10' width='20' height='20' fill='none' stroke='rgba(139,69,19,0.08)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  opacity: 0.4;
+}
+
+/* 卡片古风阴影 */
+.heritage-card-shadow {
+  box-shadow: 
+    0 4px 16px rgba(92, 64, 51, 0.12),
+    0 8px 32px rgba(92, 64, 51, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heritage-card-shadow:hover {
+  box-shadow: 
+    0 12px 40px rgba(92, 64, 51, 0.2),
+    0 16px 56px rgba(92, 64, 51, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-8px);
+}
+
+/* 图片展示区域样式 */
+.heritage-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heritage-gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.heritage-gallery-item:hover::before {
+  opacity: 1;
+}
+
+.heritage-gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 60px rgba(92, 64, 51, 0.3);
+}
+
+.heritage-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.heritage-gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* 印章风格标签 */
+.seal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+  font-weight: 600;
+  color: #c41e3a;
+  border: 2px solid #c41e3a;
+  border-radius: 4px;
+  position: relative;
+  letter-spacing: 2px;
+  background: rgba(196, 30, 58, 0.05);
+}
+
+.seal-badge::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(196, 30, 58, 0.3);
+  pointer-events: none;
+}
+
+.theme-ink-wash-bg {
+  background: linear-gradient(180deg, #faf9f6 0%, #f0ede8 50%, #e8e4de 100%);
+}
+
+.theme-ink-wash-bg::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='blur'%3E%3CfeGaussianBlur stdDeviation='1'/%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='8' fill='%232c2c2c' fill-opacity='0.08' filter='url(%23blur)'/%3E%3Ccircle cx='10' cy='10' r='4' fill='%232c2c2c' fill-opacity='0.04'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%232c2c2c' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.theme-ink-wash-particle {
+  background: radial-gradient(circle, #daa520 0%, transparent 70%);
+  box-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+}
+
+.theme-blue-porcelain-bg {
+  background: linear-gradient(180deg, #fafcfe 0%, #f0f6fc 50%, #e4eef8 100%);
+}
+
+.theme-blue-porcelain-bg::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 10 Q50 20 60 15 Q70 25 65 40 Q75 50 65 60 Q55 70 40 65 Q25 75 15 60 Q5 50 15 40 Q10 25 20 15 Q30 5 40 10' fill='none' stroke='%231e4d8c' stroke-opacity='0.1' stroke-width='1.5'/%3E%3Ccircle cx='40' cy='40' r='8' fill='none' stroke='%231e4d8c' stroke-opacity='0.08' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+.theme-blue-porcelain-particle {
+  background: radial-gradient(circle, #60a5fa 0%, transparent 70%);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+.theme-dunhuang-bg {
+  background: linear-gradient(180deg, #fdf8f0 0%, #f8f0e0 50%, #f0e8d0 100%);
+}
+
+.theme-dunhuang-bg::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 Q60 30 80 30 Q60 50 70 70 Q50 60 30 70 Q40 50 20 30 Q40 30 50 10' fill='none' stroke='%23b8860b' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='50' r='15' fill='none' stroke='%23b8860b' stroke-opacity='0.07' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='25' fill='none' stroke='%23b8860b' stroke-opacity='0.05' stroke-width='0.5' stroke-dasharray='4 2'/%3E%3C/svg%3E");
+}
+
+.theme-dunhuang-particle {
+  background: radial-gradient(circle, #f4c430 0%, transparent 70%);
+  box-shadow: 0 0 8px rgba(244, 196, 48, 0.6);
+}
+
+.theme-jiangnan-bg {
+  background: linear-gradient(180deg, #f8faf8 0%, #f0f4f0 50%, #e4eae4 100%);
+}
+
+.theme-jiangnan-bg::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20 30 30 Q45 40 60 30' fill='none' stroke='%234a6741' stroke-opacity='0.08' stroke-width='1'/%3E%3Cpath d='M0 45 Q15 35 30 45 Q45 55 60 45' fill='none' stroke='%234a6741' stroke-opacity='0.04' stroke-width='0.5'/%3E%3Crect x='20' y='20' width='20' height='20' fill='none' stroke='%234a6741' stroke-opacity='0.02' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+.theme-jiangnan-particle {
+  background: radial-gradient(circle, #7ab07a 0%, transparent 70%);
+  box-shadow: 0 0 8px rgba(122, 176, 122, 0.6);
+}
+
+.theme-brocade-bg {
+  background: linear-gradient(180deg, #fefcfa 0%, #faf4f0 50%, #f4ece6 100%);
+}
+
+.theme-brocade-bg::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='20' height='20' fill='%23c41e3a' fill-opacity='0.03'/%3E%3Crect x='20' y='20' width='20' height='20' fill='%23c41e3a' fill-opacity='0.03'/%3E%3Cpath d='M0 0 L40 40 M40 0 L0 40' stroke='%23c41e3a' stroke-opacity='0.05' stroke-width='0.5'/%3E%3Ccircle cx='20' cy='20' r='5' fill='none' stroke='%23c41e3a' stroke-opacity='0.1' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+.theme-brocade-particle {
+  background: radial-gradient(circle, #f06078 0%, transparent 70%);
+  box-shadow: 0 0 8px rgba(240, 96, 120, 0.6);
+}
+
+[data-theme='ink-wash'] .hero-heritage-bg {
+  background: linear-gradient(135deg, 
+    #2c1810 0%, 
+    #4a2c1a 20%, 
+    #6b4423 40%, 
+    #8b6f47 60%, 
+    #a0826d 80%, 
+    #4a3428 100%
+  );
+}
+
+[data-theme='blue-porcelain'] .hero-heritage-bg {
+  background: linear-gradient(135deg, 
+    #0d1828 0%, 
+    #1a2a3c 20%, 
+    #2a4a6c 40%, 
+    #3a5a7c 60%, 
+    #4a6a8c 80%, 
+    #1e3a5c 100%
+  );
+}
+
+[data-theme='dunhuang'] .hero-heritage-bg {
+  background: linear-gradient(135deg, 
+    #1a1408 0%, 
+    #3d2914 20%, 
+    #6b4423 40%, 
+    #b8860b 60%, 
+    #daa520 80%, 
+    #3d2914 100%
+  );
+}
+
+[data-theme='jiangnan'] .hero-heritage-bg {
+  background: linear-gradient(135deg, 
+    #101810 0%, 
+    #2a3a2a 20%, 
+    #4a5a4a 40%, 
+    #6b8e7b 60%, 
+    #8ab08a 80%, 
+    #2a3a2a 100%
+  );
+}
+
+[data-theme='brocade'] .hero-heritage-bg {
+  background: linear-gradient(135deg, 
+    #180a0c 0%, 
+    #3a1a1a 20%, 
+    #6b2a2a 40%, 
+    #c41e3a 60%, 
+    #e43e5a 80%, 
+    #3a1a1a 100%
+  );
+}
+
+[data-theme='ink-wash'] .golden-particle {
+  background: radial-gradient(circle, #daa520 0%, transparent 70%);
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.6);
+}
+
+[data-theme='blue-porcelain'] .golden-particle {
+  background: radial-gradient(circle, #60a5fa 0%, transparent 70%);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+}
+
+[data-theme='dunhuang'] .golden-particle {
+  background: radial-gradient(circle, #f4c430 0%, transparent 70%);
+  box-shadow: 0 0 10px rgba(244, 196, 48, 0.6);
+}
+
+[data-theme='jiangnan'] .golden-particle {
+  background: radial-gradient(circle, #7ab07a 0%, transparent 70%);
+  box-shadow: 0 0 10px rgba(122, 176, 122, 0.6);
+}
+
+[data-theme='brocade'] .golden-particle {
+  background: radial-gradient(circle, #f06078 0%, transparent 70%);
+  box-shadow: 0 0 10px rgba(240, 96, 120, 0.6);
+}
+
+.theme-heritage-card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-heritage-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--pattern-bg);
+  background-size: 50px 50px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.theme-heritage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px var(--color-shadow-glow);
+}
+
+.theme-heritage-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-border);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.theme-ornament-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='30' viewBox='0 0 100 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15 Q25 5 50 15 Q75 25 100 15' fill='none' stroke='var(--color-primary)' stroke-opacity='0.3' stroke-width='2'/%3E%3Ccircle cx='50' cy='15' r='4' fill='var(--color-accent)' fill-opacity='0.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  pointer-events: none;
+}
+
+.theme-ornament-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='30' viewBox='0 0 100 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15 Q25 25 50 15 Q75 5 100 15' fill='none' stroke='var(--color-primary)' stroke-opacity='0.3' stroke-width='2'/%3E%3Ccircle cx='50' cy='15' r='4' fill='var(--color-accent)' fill-opacity='0.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  pointer-events: none;
+}
+
+.theme-section-divider {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-section-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.theme-section-divider::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--glow-primary);
+}
+
+@media (max-width: 768px) {
+  .building-silhouette {
+    height: 150px;
+  }
+  
+  .hero-heritage-bg::before {
+    background-size: 150px 150px;
+  }
+  
+  .theme-heritage-card::before {
+    opacity: 0.15;
+    background-size: 30px 30px;
+  }
+}

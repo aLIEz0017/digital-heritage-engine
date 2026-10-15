@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: backend-node.Dockerfile
+    container_name: heritage-backend
+    restart: unless-stopped
+    environment:
+      APP_NAME: 非遗数字生命互动引擎
+      APP_VERSION: 1.0.0
+      DEBUG: "false"
+      DATABASE_URL: sqlite+aiosqlite:///./heritage.db
+      CORS_STRICT: "true"
+      CORS_ORIGINS: '["http://localhost:3000","http://127.0.0.1:3000"]'
+      CORS_ORIGINS_MERGE_DEFAULTS: "false"
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: frontend.Dockerfile
+    container_name: heritage-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"

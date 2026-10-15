@@ -1,0 +1,41 @@
+[33m4c092bc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mshinku[m[33m)[m HEAD@{0}: checkout: moving from main to shinku
+[33m2cb080c[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{1}: checkout: moving from shinku to main
+[33m4c092bc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mshinku[m[33m)[m HEAD@{2}: checkout: moving from main to shinku
+[33m2cb080c[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{3}: checkout: moving from shinku to main
+[33m4c092bc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mshinku[m[33m)[m HEAD@{4}: commit: 首页美化
+[33md1feb96[m HEAD@{5}: commit: 首页的美化
+[33m2cb080c[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{6}: checkout: moving from main to shinku
+[33m2cb080c[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{7}: checkout: moving from shinku to main
+[33m22e7ec7[m HEAD@{8}: commit: 完善智能图谱的各项功能
+[33m2cb080c[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{9}: checkout: moving from main to shinku
+[33m2cb080c[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{10}: pull: Fast-forward
+[33mb383647[m HEAD@{11}: checkout: moving from shinku to main
+[33m8595120[m HEAD@{12}: commit: 智能图谱与快照连通
+[33mb383647[m HEAD@{13}: checkout: moving from main to shinku
+[33mb383647[m HEAD@{14}: pull: Merge made by the 'ort' strategy.
+[33m311cb05[m HEAD@{15}: pull: Fast-forward
+[33m31b12b8[m HEAD@{16}: reset: moving to HEAD
+[33m31b12b8[m HEAD@{17}: checkout: moving from shinku to main
+[33mcbd8cbb[m HEAD@{18}: commit: 添加api
+[33m31b12b8[m HEAD@{19}: checkout: moving from main to shinku
+[33m31b12b8[m HEAD@{20}: commit: test
+[33m79be3a2[m HEAD@{21}: pull: Fast-forward
+[33maea055a[m HEAD@{22}: reset: moving to HEAD
+[33maea055a[m HEAD@{23}: checkout: moving from temp1 to main
+[33maea055a[m HEAD@{24}: checkout: moving from main to temp1
+[33maea055a[m HEAD@{25}: commit: new
+[33ma049a22[m HEAD@{26}: pull: Fast-forward
+[33m4ba23b5[m HEAD@{27}: checkout: moving from tempq to main
+[33macb3eb4[m HEAD@{28}: checkout: moving from temp to tempq
+[33macb3eb4[m HEAD@{29}: commit: 用户登陆注册的完善和头像上传
+[33m4ba23b5[m HEAD@{30}: checkout: moving from main to temp
+[33m4ba23b5[m HEAD@{31}: reset: moving to HEAD
+[33m4ba23b5[m HEAD@{32}: pull: Fast-forward
+[33mc8bc0af[m HEAD@{33}: reset: moving to HEAD
+[33mc8bc0af[m HEAD@{34}: pull: Fast-forward
+[33m56b2893[m HEAD@{35}: pull: Fast-forward
+[33m7f7f56d[m HEAD@{36}: checkout: moving from shinku to main
+[33m7f7f56d[m HEAD@{37}: checkout: moving from main to shinku
+[33m7f7f56d[m HEAD@{38}: commit: 建立首页框架，用户页面的实现
+[33m2a04fc3[m HEAD@{39}: pull: Fast-forward
+[33ma1b08a3[m HEAD@{40}: clone: from https://cslabcg.whu.edu.cn/vdir/Gitlab/2024302111122/project24798-6754.git
